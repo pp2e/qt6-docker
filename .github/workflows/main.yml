@@ -28,3 +28,10 @@ jobs:
           push: true
           context: "{{defaultContext}}:6.6-wasm-aqt"
           tags: "${{ secrets.DOCKERHUB_USERNAME }}/qt6-wasm-aqt:latest"
+      -
+        name: Build and push android
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          context: "{{defaultContext}}:6.6-android-aqt"
+          tags: "${{ secrets.DOCKERHUB_USERNAME }}/qt6-android-aqt:latest"
