@@ -29,6 +29,7 @@ echo
 echo '--> Download & install the Qt library using aqt'
 echo
 
+aqt list-tool linux desktop
 #aqt list-qt linux desktop --arch "$QT_VERSION"
 #aqt list-qt linux desktop --long-modules "$QT_VERSION" wasm_singlethread
 aqt install-qt -O "$QT_PATH" linux desktop "$QT_VERSION" wasm_singlethread -m qtmultimedia
