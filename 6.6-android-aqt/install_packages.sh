@@ -2,7 +2,7 @@
 
 [ "$QT_PATH" ] || QT_PATH=/opt/Qt
 
-[ "$ADDITIONAL_PACKAGES" ] || ADDITIONAL_PACKAGES='build-essential ninja-build'
+[ "$ADDITIONAL_PACKAGES" ] || ADDITIONAL_PACKAGES='build-essential ninja-build extra-cmake-modules'
 
 # Init package system
 apt update
