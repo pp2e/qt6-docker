@@ -29,6 +29,7 @@ echo
 echo '--> Download & install the Qt library using aqt'
 echo
 
+aqt list-tool linux desktop
 for abi in armv7 arm64_v8a x86 x86_64; do
     aqt install-qt -O "$QT_PATH" linux android "$QT_VERSION" "android_$abi"
 done
