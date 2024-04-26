@@ -23,7 +23,7 @@ echo '--> Install the required packages to install Qt'
 echo
 
 apt install -y git python3-pip libglib2.0-0
-pip3 install --no-cache-dir "$AQT_VERSION"
+pip3 install --no-cache-dir --break-system-packages "$AQT_VERSION"
 
 echo
 echo '--> Download & install the Qt library using aqt'
