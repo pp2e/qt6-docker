@@ -35,7 +35,7 @@ aqt list-qt linux desktop
 aqt list-tool linux desktop
 aqt install-qt -O "$QT_PATH" linux desktop "$QT_VERSION" wasm_singlethread -m qtmultimedia
 aqt install-tool -O "$QT_PATH" linux desktop tools_cmake
-aqt install-tool -O "$QT_PATH" linux desktop tools_ninja
+#aqt install-tool -O "$QT_PATH" linux desktop tools_ninja
 # Host Qt needed for cross-compilation
 aqt install-qt -O "$QT_PATH" linux desktop "$QT_VERSION" gcc_64
 
