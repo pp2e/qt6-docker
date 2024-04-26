@@ -4,7 +4,7 @@ FROM ubuntu:20.04
 MAINTAINER State Of The Art <docker@state-of-the-art.io> (@stateoftheartio)
 
 # PIP requirement like "aqtinstall==2.0.6" or url with egg file
-ARG AQT_VERSION="aqtinstall==3.1.12"
+ARG AQT_VERSION="aqtinstall==3.1.13"
 
 ARG QT_VERSION=6.6.3
 ARG QT_PATH=/opt/Qt
