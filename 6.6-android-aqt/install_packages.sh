@@ -34,7 +34,7 @@ echo
 cat /tmp/to_install_libs.lst | cut -d: -f 1 | xargs apt install -y --no-install-suggests --no-install-recommends $ADDITIONAL_PACKAGES
 
 # Install ninja
-apt install ninja
+apt install ninja-build
 
 # Complete the cleaning
 
