@@ -38,6 +38,8 @@ aqt install-tool -O "$QT_PATH" linux desktop tools_cmake
 # Host Qt needed for cross-compilation
 aqt install-qt -O "$QT_PATH" linux desktop "$QT_VERSION" gcc_64
 
+pip freeze --help
+pip freeze
 pip3 freeze | xargs pip3 uninstall -y --break-system-packages
 
 # Create qt-cmake wrapper to simplify the android sdk usage
