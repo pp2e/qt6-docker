@@ -40,7 +40,8 @@ aqt install-qt -O "$QT_PATH" linux desktop "$QT_VERSION" gcc_64
 
 pip freeze --help
 pip freeze
-pip3 freeze | xargs pip3 uninstall -y --break-system-packages
+# Freeze should automatically exclude this, but it does not happen
+pip3 freeze --exclude wheel | xargs pip3 uninstall -y --break-system-packages
 
 # Create qt-cmake wrapper to simplify the android sdk usage
 mkdir -p /usr/local/bin
