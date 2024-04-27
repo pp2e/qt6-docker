@@ -23,7 +23,7 @@ echo
 echo '--> Install EmSDK'
 echo
 
-apt install -y curl python-is-python3 xz-utils
+apt install -y curl python-is-python3 xz-utils bzip2
 
 echo "$SDK_SHA256 -" > sum.txt && curl -fLs "$SDK_URL" | tee /tmp/emsdk.tar.gz | sha256sum -c sum.txt
 mkdir -p "$SDK_PATH"
