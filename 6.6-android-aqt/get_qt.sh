@@ -36,7 +36,7 @@ done
 aqt install-tool -O "$QT_PATH" linux desktop tools_cmake
 #aqt install-tool -O "$QT_PATH" linux desktop tools_ninja
 # Host Qt needed for cross-compilation
-aqt install-qt -O "$QT_PATH" linux desktop "$QT_VERSION" gcc_64
+aqt install-qt -O "$QT_PATH" linux desktop "$QT_VERSION" gcc_64 -m qtshadertools
 
 pip freeze --help
 pip freeze
