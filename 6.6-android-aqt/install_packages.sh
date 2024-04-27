@@ -35,6 +35,7 @@ cat /tmp/to_install_libs.lst | cut -d: -f 1 | xargs apt install -y --no-install-
 
 # Install ninja
 apt install ninja-build extra-cmake-modules -y --no-install-suggests --no-install-recommends
+ln -s /usr/share/ECM /usr/share/local/ECM
 
 # Complete the cleaning
 
