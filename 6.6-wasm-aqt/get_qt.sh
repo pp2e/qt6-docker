@@ -23,7 +23,7 @@ echo '--> Install the required packages to install Qt'
 echo
 
 apt install -y git python3-pip libglib2.0-0
-pip3 install --no-cache-dir "$AQT_VERSION"
+pip3 install --no-cache-dir --break-system-packages "$AQT_VERSION"
 
 echo
 echo '--> Download & install the Qt library using aqt'
@@ -31,15 +31,14 @@ echo
 
 #aqt list-qt linux desktop --arch "$QT_VERSION"
 #aqt list-qt linux desktop --long-modules "$QT_VERSION" wasm_singlethread
-aqt list-qt linux desktop
-aqt list-tool linux desktop
 aqt install-qt -O "$QT_PATH" linux desktop "$QT_VERSION" wasm_singlethread -m qtmultimedia
 aqt install-tool -O "$QT_PATH" linux desktop tools_cmake
 #aqt install-tool -O "$QT_PATH" linux desktop tools_ninja
 # Host Qt needed for cross-compilation
 aqt install-qt -O "$QT_PATH" linux desktop "$QT_VERSION" gcc_64
 
-pip3 freeze | xargs pip3 uninstall -y
+# Freeze should automatically exclude this, but it does not happen
+pip3 freeze --exclude wheel | xargs pip3 uninstall --break-system-packages -y
 
 # Create qt-cmake wrapper to simplify the emsdk usage
 mkdir -p /usr/local/bin

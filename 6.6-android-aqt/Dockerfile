@@ -1,15 +1,15 @@
 # Image: stateoftheartio/qt6:6.6-android-aqt
 
-FROM ubuntu:rolling
+FROM ubuntu:24.04
 MAINTAINER State Of The Art <docker@state-of-the-art.io> (@stateoftheartio)
 
 # PIP requirement like "aqtinstall==2.0.6" or url with egg file
-ARG AQT_VERSION="aqtinstall==3.1.7"
+ARG AQT_VERSION="aqtinstall==3.1.13"
 
-ARG QT_VERSION=6.6.1
+ARG QT_VERSION=6.6.3
 ARG QT_PATH=/opt/Qt
 
-ARG ADDITIONAL_PACKAGES="sudo git openssh-client ca-certificates curl python3 openjdk-11-jdk-headless locales"
+ARG ADDITIONAL_PACKAGES="sudo git openssh-client ca-certificates curl python3 openjdk-11-jdk-headless locales ninja-build"
 
 ARG ANDROID_NATIVE_API_LEVEL=33
 ARG SDK_PLATFORM=android-${ANDROID_NATIVE_API_LEVEL}

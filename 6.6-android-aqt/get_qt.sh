@@ -38,8 +38,6 @@ aqt install-tool -O "$QT_PATH" linux desktop tools_cmake
 # Host Qt needed for cross-compilation
 aqt install-qt -O "$QT_PATH" linux desktop "$QT_VERSION" gcc_64 -m qtshadertools
 
-pip freeze --help
-pip freeze
 # Freeze should automatically exclude this, but it does not happen
 pip3 freeze --exclude wheel | xargs pip3 uninstall -y --break-system-packages
 

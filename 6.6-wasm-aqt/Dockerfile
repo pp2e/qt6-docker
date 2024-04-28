@@ -13,7 +13,7 @@ ARG SDK_PATH=/opt/emsdk
 ARG SDK_VERSION=3.1.37
 ARG SDK_SHA256=c3c80dfe82fb448751d1c48200e5143aeca0f0db1d021db4b63655a9d9470cd8
 
-ARG ADDITIONAL_PACKAGES="sudo git openssh-client ca-certificates curl python3 locales"
+ARG ADDITIONAL_PACKAGES="sudo git openssh-client ca-certificates curl python3 locales ninja-build"
 
 ENV DEBIAN_FRONTEND=noninteractive \
     DEBCONF_NONINTERACTIVE_SEEN=true \
