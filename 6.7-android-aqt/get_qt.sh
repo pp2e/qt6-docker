@@ -34,7 +34,7 @@ aqt list-tool all_os desktop
 for abi in armv7 arm64_v8a x86 x86_64; do
     aqt install-qt -O "$QT_PATH" all_os android "$QT_VERSION" "android_$abi" -m qtshadertools
 done
-aqt install-tool -O "$QT_PATH" linux desktop tools_cmake
+aqt install-tool -O "$QT_PATH" all_os desktop tools_cmake
 #aqt install-tool -O "$QT_PATH" linux desktop tools_ninja
 # Host Qt needed for cross-compilation
 aqt install-qt -O "$QT_PATH" linux desktop "$QT_VERSION" gcc_64 -m qtshadertools
