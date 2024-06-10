@@ -33,7 +33,7 @@ emsdk install "$SDK_VERSION"
 emsdk activate "$SDK_VERSION"
 
 # Make sure node tool exist
-ls "$EMSDK_NODE"
+#ls "$EMSDK_NODE"
 
 echo
 echo '--> Restore the packages list to the original state'
