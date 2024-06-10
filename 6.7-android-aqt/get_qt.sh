@@ -33,7 +33,7 @@ echo
 # aqt list-tool all_os desktop
 aqt version
 for abi in armv7 arm64_v8a x86 x86_64; do
-    aqt install-qt -O "$QT_PATH" linux android "$QT_VERSION" "android_$abi" -m qtshadertools
+    aqt install-qt -O "$QT_PATH" all_os android "$QT_VERSION" "android_$abi" -m qtshadertools
 done
 aqt install-tool -O "$QT_PATH" linux desktop tools_cmake
 #aqt install-tool -O "$QT_PATH" linux desktop tools_ninja
