@@ -5,7 +5,8 @@ MAINTAINER State Of The Art <docker@state-of-the-art.io> (@stateoftheartio)
 
 # PIP requirement like "aqtinstall==2.0.6" or url with egg file
 # Tim Angus's aqtinstall fork with wasm support
-ARG AQT_VERSION="git+https://github.com/timangus/aqtinstall"
+#ARG AQT_VERSION="git+https://github.com/timangus/aqtinstall"
+ARG AQT_VERSION="aqtinstall"
 
 ARG QT_VERSION=6.7.1
 ARG QT_PATH=/opt/Qt
