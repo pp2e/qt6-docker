@@ -38,6 +38,7 @@ aqt install-qt -O "$QT_PATH" linux desktop "$QT_VERSION" linux_gcc_64
 aqt install-tool -O "$QT_PATH" linux desktop tools_cmake
 
 # Freeze should automatically exclude this, but it does not happen
+pip3 freeze --exclude wheel
 pip3 freeze --exclude wheel | xargs pip3 uninstall --break-system-packages -y
 
 # Create qt-cmake wrapper to simplify the emsdk usage
