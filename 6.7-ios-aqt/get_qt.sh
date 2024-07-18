@@ -48,7 +48,7 @@ apt install -y libclang-dev ninja-build
 cat - <<\EOF | patch -p 1 "$QT_MACOS/../Src/qtbase/src/tools/macdeployqt/shared/shared.cpp"
 --- a/src/tools/macdeployqt/shared/shared.cpp
 +++ b/src/tools/macdeployqt/shared/shared.cpp
-@@ -414,6 +414,10 @@
+@@ -392,6 +392,10 @@
          CFRelease(bundle);
      }
      CFRelease(bundleURL);
