@@ -45,7 +45,7 @@ echo
 apt install -y libclang-dev ninja-build
 
 # Patch the macdeployqt tool
-cat - <<\EOF | patch -p 1 "$QT_MACOS/../Src/qtbase/src/tools/macdeployqt/shared/shared.cpp" || cat /opt/Qt/6.7.1/macos/../Src/qtbase/src/tools/macdeployqt/shared/shared.cpp.rej
+cat - <<\EOF | patch -p 1 "$QT_MACOS/../Src/qtbase/src/tools/macdeployqt/shared/shared.cpp" || cat /opt/Qt/6.7.1/macos/../Src/qtbase/src/tools/macdeployqt/shared/shared.cpp
 --- a/src/tools/macdeployqt/shared/shared.cpp
 +++ b/src/tools/macdeployqt/shared/shared.cpp
 @@ -392,6 +392,10 @@
@@ -60,6 +60,8 @@ cat - <<\EOF | patch -p 1 "$QT_MACOS/../Src/qtbase/src/tools/macdeployqt/shared/
 
      if (QFile::exists(binaryPath))
 EOF
+
+exit 1
 
 # Building macdeployqt tool
 cmake -S "$QT_MACOS/../Src/qtbase" -G Ninja -B /tmp/macdeployqt-build \
