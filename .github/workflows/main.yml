@@ -59,4 +59,3 @@ jobs:
           push: true
           context: "{{defaultContext}}:6.7-ios-aqt"
           tags: "${{ secrets.DOCKERHUB_USERNAME }}/qt6-ios-aqt:latest"
-\ No newline at end of file
