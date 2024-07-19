@@ -45,23 +45,7 @@ echo
 apt install -y libclang-dev ninja-build
 
 # Patch the macdeployqt tool
-cat - <<\EOF | patch -p 1 "$QT_MACOS/../Src/qtbase/src/tools/macdeployqt/shared/shared.cpp" || cat /opt/Qt/6.7.1/macos/../Src/qtbase/src/tools/macdeployqt/shared/shared.cpp
---- a/src/tools/macdeployqt/shared/shared.cpp
-+++ b/src/tools/macdeployqt/shared/shared.cpp
-@@ -392,6 +392,10 @@
-         CFRelease(bundle);
-     }
-     CFRelease(bundleURL);
-+#else
-+    // Cross-compilation on other systems uses static path to the binary
-+    QString binName = QFileInfo(appBundlePath).completeBaseName();
-+    binaryPath = QDir(appBundlePath).filePath(QString("Contents/MacOS/").append(binName));
- #endif
-
-     if (QFile::exists(binaryPath))
-EOF
-
-exit 1
+patch "$QT_MACOS/../Src/qtbase/src/tools/macdeployqt/shared/shared.cpp" macdeployqt.diff
 
 # Building macdeployqt tool
 cmake -S "$QT_MACOS/../Src/qtbase" -G Ninja -B /tmp/macdeployqt-build \

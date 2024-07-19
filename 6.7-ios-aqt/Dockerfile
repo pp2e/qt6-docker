@@ -21,7 +21,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     QT_MACOS=${QT_PATH}/${QT_VERSION}/macos \
     PATH=$PATH:${QT_PATH}/Tools/CMake/bin:${QT_PATH}/Tools/Ninja:${QT_PATH}/${QT_VERSION}/macos/bin:/opt/osxcross/bin
 
-COPY get_qt.sh get_osxcross.sh install_packages.sh /tmp/
+COPY get_qt.sh get_osxcross.sh install_packages.sh macdeployqt.diff /tmp/
 
 # Get Qt binaries with aqt
 RUN /tmp/get_qt.sh

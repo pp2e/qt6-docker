@@ -1,0 +1,13 @@
+--- a/shared.cpp
++++ b/shared.cpp
+@@ -357,6 +357,10 @@
+         CFRelease(bundle);
+     }
+     CFRelease(bundleURL);
++#else
++    // Cross-compilation on other systems uses static path to the binary
++    QString binName = QFileInfo(appBundlePath).completeBaseName();
++    binaryPath = QDir(appBundlePath).filePath(QString("Contents/MacOS/").append(binName));
+ #endif
+ 
+     if (QFile::exists(binaryPath))
