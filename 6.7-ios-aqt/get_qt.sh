@@ -97,6 +97,7 @@ EOF
 chmod +x /usr/local/bin/*
 
 # Copying bin and libexec to macos directory to use Qt UI and other compilers
+rm "$QT_MACOS/bin" # Something wrong here i think
 cp -a "$QT_MACOS/../gcc_64/bin" "$QT_MACOS/"
 cp -a "$QT_MACOS/../gcc_64/libexec" "$QT_MACOS/"
 # Libs required by libexec
